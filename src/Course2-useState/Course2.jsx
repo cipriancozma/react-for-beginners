@@ -3,6 +3,7 @@ import React, { useState } from "react";
 function Course2() {
   const [count, setCount] = useState(0);
   const [input, setInput] = useState("");
+  const [showText, setShowText] = useState(false);
 
   const handleIncrease = () => {
     setCount((prevCount) => prevCount + 1);
@@ -15,6 +16,8 @@ function Course2() {
 
   return (
     <div>
+      <button onClick={() => setShowText(!showText)}>SHOW / HIDE TEXT</button>
+      {showText && <h2>Hello, I am Ciprian</h2>}
       <h2>Input</h2>
       <input type={"text"} onChange={(e) => setInput(e.target.value)} />
       {input}
